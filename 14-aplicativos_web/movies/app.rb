@@ -15,3 +15,10 @@ end
 get('/movies/new') do
     erb :new
 end
+
+post('/movies/create') do
+    @movies = Movie.new
+    @movies.title =    params['title']
+    @movies.director = params['director']
+    @movies.year =     params['year']
+end
