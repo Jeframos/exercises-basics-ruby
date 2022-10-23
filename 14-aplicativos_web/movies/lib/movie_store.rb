@@ -1,5 +1,6 @@
 require 'yaml/store'
 
+#Classe para gerenciar a gravação de arquivo atarvés do YAML::Store
 class MovieStore
 
     def initialize(file_name)  #O initialize vai buscar o nome do arquivo que será criado
