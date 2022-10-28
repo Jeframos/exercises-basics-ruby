@@ -5,13 +5,7 @@ require 'movie_store'
 store = MovieStore.new('movies.yml')
 
 get('/movies') do
-    @movies = []
-    @movies[0] = Movie.new
-    @movies[0].title = "Jaws"
-    @movies[1] = Movie.new
-    @movies[1].title = "Alien"
-    @movies[2] = Movie.new
-    @movies[2].title = "Terminator" 
+    @movies = store.all  #Este método 'all' está presente no arquivo 'movie_store.rb'
     erb :index
 end
 
@@ -21,9 +15,9 @@ end
 
 post('/movies/create') do
     @movie = Movie.new
-    @movie.title =    params['title']
+    @movie.title =    params['title']   #Esses métodos 'params['']' retornam as informações cadastradas no formulario do arquivo 'new.erb'
     @movie.director = params['director']
     @movie.year =     params['year']
-    store.save(@movie)
-    redirect '/movies/new'
+    store.save(@movie)  #Este método 'save' está presente no arquivo 'movie_store.rb'
+    redirect '/movies/new' #Esta paravra chave 'redirect', ira retornar para o formulario quando o usuário clicar no botão submit
 end
