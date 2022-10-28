@@ -1,0 +1,6 @@
+---
+1: !ruby/object:Movie
+  title: Titanic
+  director: James Cameron
+  year: '1998'
+  id: 1
