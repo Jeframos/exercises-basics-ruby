@@ -21,3 +21,7 @@ post('/movies/create') do
     store.save(@movie)  #Este método 'save' está presente no arquivo 'movie_store.rb'
     redirect '/movies/new' #Esta paravra chave 'redirect', ira retornar para o formulario quando o usuário clicar no botão submit
 end
+
+get('/movies/:id') do
+    "Received a request for movie ID: #{params['id']}"
+end
