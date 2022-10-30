@@ -4,3 +4,8 @@
   director: James Cameron
   year: '1998'
   id: 1
+2: !ruby/object:Movie
+  title: Cidade de Deus
+  director: Katia Lund, Fernando Meirelles
+  year: '2002'
+  id: 2

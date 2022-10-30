@@ -7,6 +7,13 @@ class MovieStore
         @store = YAML::Store.new(file_name)
     end
 
+    def find(id)
+        @store.transaction do
+            @store[id]
+        end
+    end
+
+
     #Este método 'all' será utilizado na rota '/movies' para apresentar os filmes adicionados ao arquivo 'movies.yml'
     def all
         @store.transaction do
