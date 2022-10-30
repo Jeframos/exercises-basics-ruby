@@ -22,6 +22,9 @@ post('/movies/create') do
     redirect '/movies/new' #Esta paravra chave 'redirect', ira retornar para o formulario quando o usuário clicar no botão submit
 end
 
+#Carregar filmes baseados no arquivo "movies.yml"
 get('/movies/:id') do
-    "Received a request for movie ID: #{params['id']}"
+    id = params['id'].to_i
+    @movie = store.find(id)
+    erb :show
 end
